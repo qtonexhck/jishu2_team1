@@ -37,5 +37,5 @@ Demoapp.controller("Page1Ctrl", function ($rootScope, $scope, Util, $state, SERV
         id:-1
     }];
 
-    $scope.optaaaa1=$scope.list1[0].id;
+    $scope.opt1=$scope.list1[0].id;
 });
