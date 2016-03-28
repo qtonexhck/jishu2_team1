@@ -1,5 +1,0 @@
-rootProject.name = 'webDemo'
-include 'web-war'
-include 'AuthSql'
-include 'frontend'
-
