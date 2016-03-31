@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.testOrder.business.dao.OrderUserMapper" >
+  <resultMap id="BaseResultMap" type="com.testOrder.business.model.OrderUser" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <trim prefix="where" prefixOverrides="and|or" >
+      <if test="condition.username != null" >
+         and username like #{condition.username}
+      </if>
+      <if test="condition.username_greater != null" >
+         and username &gt;= #{condition.username_greater}
+      </if>
+      <if test="condition.username_less != null" >
+         and username &lt;= #{condition.username_less}
+      </if>
+      <if test="condition.username_notequal != null" >
+         and username &lt;&gt; #{condition.username_notequal}
+      </if>
+      <if test="condition.username_in != null" >
+         and username in 
+		<foreach collection="condition.username_in" item="username" open="(" separator="," close=")" >
+			#{username}
+		</foreach>
+      </if>
+    </trim>
+  </sql>
+  <sql id="Base_Column_List" >
+    user_id, username
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.testOrder.business.model.Criteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from order_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <include refid="common.Mysql_Pagination_Limit" />
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_user
+    where user_id = #{userId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from order_user
+    where user_id = #{userId}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.testOrder.business.model.Criteria" >
+    delete from order_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.testOrder.business.model.OrderUser" >
+    insert into order_user (user_id, username)
+    values (#{userId}, #{username})
+  </insert>
+  <insert id="insertSelective" parameterType="com.testOrder.business.model.OrderUser" >
+    insert into order_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId},
+      </if>
+      <if test="username != null" >
+        #{username},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.testOrder.business.model.Criteria" resultType="java.lang.Integer" >
+    select count(*) from order_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update order_user
+    <set >
+      <if test="record.userId != null" >
+        user_id = #{record.userId},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update order_user
+    set user_id = #{record.userId},
+      username = #{record.username}
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.testOrder.business.model.OrderUser" >
+    update order_user
+    <set >
+      <if test="username != null" >
+        username = #{username},
+      </if>
+    </set>
+    where user_id = #{userId}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.testOrder.business.model.OrderUser" >
+    update order_user
+    set username = #{username}
+    where user_id = #{userId}
+  </update>
+</mapper>

@@ -1,2 +1,5 @@
 rootProject.name = 'orderSystem06'
+include 'admin-war'
+include 'AuthSql'
+include 'frontend'
 

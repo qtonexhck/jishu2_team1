@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca867156-60ca-48f1-9fc8-6d4fe60b7e0d" name="Default" comment="" />
+    <list default="true" id="ca867156-60ca-48f1-9fc8-6d4fe60b7e0d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/orderSystem06/.idea/workspace.xml" afterPath="$PROJECT_DIR$/orderSystem06/.idea/workspace.xml" />
+    </list>
     <ignored path="jishu2_team1.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/orderSystem06/.gradle/" />
@@ -874,12 +876,12 @@
       <created>1459389995941</created>
       <option name="number" value="Default" />
       <updated>1459389995941</updated>
-      <workItem from="1459389997406" duration="106000" />
+      <workItem from="1459389997406" duration="209000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106000" />
+    <option name="totallyTimeSpent" value="209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />

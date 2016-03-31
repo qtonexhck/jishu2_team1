@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AuthSql/AuthSql.iml" filepath="$PROJECT_DIR$/AuthSql/AuthSql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/admin-war/admin-war.iml" filepath="$PROJECT_DIR$/admin-war/admin-war.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/orderSystem06.iml" filepath="$PROJECT_DIR$/orderSystem06.iml" />
     </modules>
   </component>

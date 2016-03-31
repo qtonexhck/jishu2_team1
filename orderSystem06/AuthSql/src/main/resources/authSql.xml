@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="F:\jar\mysql\mysql-connector-java-5.0.8-bin.jar" />
+
+	<context id="MyBatis3" targetRuntime="MyBatis3">
+
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="org.mybatis.generator.plugins.MybatisCriteriaPlugin" />
+		<plugin type="org.mybatis.generator.plugins.MybatisServicePlugin">
+ 			<property name="targetPackage" value="com.testOrder.business.client.mapperclient" />
+			<property name="implementationPackage" value="com.testOrder.business.service" />
+			<property name="targetProject"	value="C:\Users\17842\Documents\jishu2_team1\orderSystem06\admin-war\src\main\java" />
+			<property name="enableInsert" value="true" />
+			<property name="enableUpdateByExampleSelective" value="true" />
+			<property name="enableInsertSelective" value="true" />
+			<property name="enableUpdateByPrimaryKey" value="true" />
+			<property name="enableDeleteByPrimaryKey" value="true" />
+			<property name="enableDeleteByExample" value="true" />
+			<property name="enableUpdateByPrimaryKeySelective" value="true" />
+			<property name="enableUpdateByExample" value="true" />
+		</plugin>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/myorder" userId="root"
+			password="123456" />
+
+		<javaModelGenerator targetPackage="com.testOrder.business.model"
+			targetProject="C:\Users\17842\Documents\jishu2_team1\orderSystem06\admin-war\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.testOrder.business.map"
+			targetProject="C:\Users\17842\Documents\jishu2_team1\orderSystem06\admin-war\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- XMLMAPPER SPRING -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.testOrder.business.dao" targetProject="C:\Users\17842\Documents\jishu2_team1\orderSystem06\admin-war\src\main\java">
+		</javaClientGenerator>
+
+
+ 	<table tableName="order_user">
+ 		<generatedKey column="id" sqlStatement="JDBC" identity="true" />
+ 	</table> 
+	</context>
+</generatorConfiguration>

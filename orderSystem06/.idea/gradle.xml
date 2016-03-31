@@ -11,12 +11,17 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AuthSql" />
+            <option value="$PROJECT_DIR$/admin-war" />
+            <option value="$PROJECT_DIR$/frontend" />
           </set>
         </option>
-        <option name="useAutoImport" value="true" />
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AuthSql" />
+            <option value="$PROJECT_DIR$/admin-war" />
+            <option value="$PROJECT_DIR$/frontend" />
           </set>
         </option>
       </GradleProjectSettings>
