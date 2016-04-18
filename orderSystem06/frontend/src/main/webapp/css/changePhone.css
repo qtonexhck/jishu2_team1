@@ -1,0 +1,44 @@
+p{
+    font-size: 2rem;
+}
+input{
+    margin: 0 0 1rem;
+    width: 100%;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+}
+#verificationCode{
+    margin: 0;
+    width: 50%;
+}
+.myButton{
+    display: inline-block;
+    margin-left: 2.5%;
+    width: 45%;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+    background-image: url("../resource/images/message.png");
+    background-repeat: no-repeat;;
+    background-size: 2rem;
+    background-position: center left;
+    background-color: #8f8f8f;
+}
+.tips{
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+.tipsIcon{
+    background-image: url("../resource/images/tips.png");
+}
+.sumbitButton{
+    position: absolute;
+    display: block;
+    left: 30%;
+    bottom: 0;
+    width: 40%;
+    font-size: 2rem;
+    background: none;
+    outline: none;
+}

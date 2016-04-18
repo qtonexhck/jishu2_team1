@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="css/myFood.css" />
+<div class="outer">
+    <div class="header borderBottom">
+        <p>我的点餐</p>
+        <p>{{ today }}</p>
+    </div>
+    <div class="menu">
+        <p class="item">{{ foodItem }}</p>
+        <p class="name">{{ place }}{{ foodName }}</p>
+    </div>
+    <p class="twoButtonInline">
+        <span class="leftButton" ng-click="doSomethings()">{{ action }}</span>
+        <span class="rightButton">{{ status }}</span>
+    </p>
+    <div id="warmTips" class="hiddenTipsOuter">
+        <table class="hiddenTable">
+            <tr>
+                <td style="text-align: center">
+                    <div class="hiddenTipsContainer">
+                        <h2>温馨提示</h2>
+                        <p>{{ warmTips }}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

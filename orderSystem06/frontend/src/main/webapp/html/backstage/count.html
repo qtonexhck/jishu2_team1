@@ -1,0 +1,89 @@
+<div ng-include="'html/backstage/tpl/head.html'"></div>
+<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row margin-bottom-20">
+                <div class="col-md-4"><button class="btn btn-success form-control" ng-class="type=='0'?'btn-success':'btn-default'" ng-click="searchNew(0)">订单详情</button></div>
+                <div class="col-md-4"><button class="btn btn-default form-control" ng-class="type=='1'?'btn-success':'btn-default'" ng-click="searchNew(1)">领取详情</button></div>
+                <!--<div class="col-md-4"><button class="btn btn-default form-control" ng-class="type=='2'?'btn-success':'btn-default'" ng-click="search(2)">未领取详情</button></div>-->
+            </div>
+            <div class="row margin-bottom-20">
+                <form class="form-inline">
+                    <div class="form-group col-md-5">
+                        <label for="date">日期:</label>
+                        <input type="date" id="date" ng-model="date" class="form-control" ng-change="searchNew(type)">
+                    </div>
+                </form>
+            </div>
+            <!--0.订单详情-->
+            <!--<table class="table table-bordered" ng-if="(list.length > 0) && (type == '0')">-->
+            <table class="table table-bordered" ng-if="(type == '0')">
+                <thead>
+                    <tr>
+                        <th>地点</th>
+                        <th>A餐</th>
+                        <th>B餐</th>
+                        <th>C餐</th>
+                        <th>总计</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{item17.location}}</td>
+                    <td>{{item17.aCount}}</td>
+                    <td>{{item17.bCount}}</td>
+                    <td>{{item17.cCount}}</td>
+                    <td>{{item17.aCount + item17.bCount + item17.cCount}}</td>
+                </tr>
+                <tr>
+                    <td>{{item18.location}}</td>
+                    <td>{{item18.aCount}}</td>
+                    <td>{{item18.bCount}}</td>
+                    <td>{{item18.cCount}}</td>
+                    <td>{{item18.aCount + item18.bCount + item18.cCount}}</td>
+                </tr>
+                <tr>
+                    <td>{{item19.location}}</td>
+                    <td>{{item19.aCount}}</td>
+                    <td>{{item19.bCount}}</td>
+                    <td>{{item19.cCount}}</td>
+                    <td>{{item19.aCount + item19.bCount + item19.cCount}}</td>
+                </tr>
+                <tr>
+                    <td>合计</td>
+                    <td>{{item17.aCount + item18.aCount + item19.aCount}}</td>
+                    <td>{{item17.bCount + item18.bCount + item19.bCount}}</td>
+                    <td>{{item17.cCount + item18.cCount + item19.cCount}}</td>
+                    <td>{{item17.aCount + item18.aCount + item19.aCount + item17.bCount + item18.bCount + item19.bCount + item17.cCount + item18.cCount + item19.cCount}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<div ng-if="list.length <= 0">-->
+                <!--<p>没有找到相关数据</p>-->
+            <!--</div>-->
+            <!--1.用户详情-->
+            <!--<table class="table table-bordered" ng-if="(list.length > 0) && ((type == '1') || (type == '2'))">-->
+            <table class="table table-bordered" ng-if="(type == '1') && (list.length > 0)">
+                <thead>
+                    <tr>
+                        <th>员工姓名</th>
+                        <th>用餐地点</th>
+                        <th>套餐类目</th>
+                        <th>领取详情</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in list">
+                        <td>{{item.name}}</td>
+                        <td>{{item.place}}</td>
+                        <td>{{item.dish_id | getValueType}}</td>
+                        <td>{{item.CONSUMED_ST | getValueByStatus}}</td>
+                    </tr>
+                </tbody>
+                <div ng-if="(list.length <= 0) && (type == '1')">
+                    <p>没有找到相关数据</p>
+                </div>
+            </table>
+        </div>
+    </div>
+</section>

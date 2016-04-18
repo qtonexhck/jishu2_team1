@@ -1,0 +1,48 @@
+<div ng-include="'html/backstage/tpl/head.html'"></div>
+<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>菜式名</th>
+                        <th>删除</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in list">
+                        <td>{{item.key}}</td>
+                        <td>{{item.value}}</td>
+                        <td><button ng-click="deleteItem(item.key)" class="btn btn-danger">删除</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-12">
+            <button ng-click="addItem()" class="btn btn-primary">新增</button>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="addBox" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增菜式</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form">
+                    <div class="form-group">
+                        <label for="menu">菜式名</label>
+                        <input type="text" id="menu" class="form-control" ng-model="menu">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary form-control" ng-click="saveOne(menu)">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点餐系统</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/backstage-public.css">
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/route.js"></script>
+    <script src="js/public/common.js"></script>
+    <script src="js/public/dateFormat.js"></script>
+
+    <!--controller-->
+    <script src="js/backstage/controller/loginCtrl.js"></script>
+    <script src="js/backstage/controller/manageCtrl.js"></script>
+    <script src="js/backstage/controller/countCtrl.js"></script>
+    <script src="js/backstage/controller/insertCtrl.js"></script>
+    <script src="js/backstage/controller/headCtrl.js"></script>
+
+    <!--directive-->
+    <!--<script src="js/backstage/directive/header-directive.js"></script>-->
+    <!--<script src="js/backstage/directive/list-directive.js"></script>-->
+
+
+    <!--service-->
+    <script src="js/backstage/service/login-service.js"></script>
+    <script src="js/backstage/service/data-service.js"></script>
+
+</head>
+<body>
+    <div ng-view></div>
+</body>
+</html>

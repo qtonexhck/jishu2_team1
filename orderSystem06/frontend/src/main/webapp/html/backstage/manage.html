@@ -1,0 +1,163 @@
+<div ng-include="'html/backstage/tpl/head.html'"></div>
+<section class="container">
+    <div class="row">
+        <!--<div class="col-md-3" ng-repeat="item in dateList">-->
+            <!--<div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>{{item.date}} {{item.modTime}}</h4>
+                </div>
+                <div class="panel-body">
+                    <p>A餐：{{item.valueA}}</p>
+                    <p>B餐：{{item.valueB}}</p>
+                    <p>C餐：{{item.valueC}}</p>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-danger" ng-click="deleteItem(item.date)" ng-if="item.isPush == 0">删除</button>
+                    <button class="btn btn-primary" ng-click="modItem(item.date)" ng-if="item.isPush == 0">修改</button>
+                    <button class="btn btn-success" ng-click="pushItem(item.date)" ng-if="item.isPush == 0">发布</button>
+                    <button class="btn btn-success disabled" ng-if="item.isPush == 1">已发布</button>
+                </div>
+            </div>-->
+        <div class="col-md-3" ng-if="dateList.length >0">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>{{dateList[0].creTime}}</h4>
+                </div>
+                <div class="panel-body">
+                    <p>A餐:{{dateList[0].dish.dishName}}</p>
+                    <p>B餐:{{dateList[1].dish.dishName}}</p>
+                    <p>C餐:{{dateList[2].dish.dishName}}</p>
+                </div>
+                <div class="panel-footer">
+                    <!--<button class="btn btn-danger" ng-click="deleteItem(dateList[0].creTime)">删除</button>-->
+                    <button class="btn btn-danger" ng-click="openDelete(dateList[0].creTime)">删除</button>
+                    <button class="btn btn-primary" ng-click="modItem(dateList[0].creTime)">修改</button>
+                    <!--<button class="btn btn-success" ng-click="pushItem(item[0].date)" ng-if="item.isPush == 0">发布</button>-->
+                    <!--<button class="btn btn-success disabled" ng-if="item.isPush == 1">已发布</button>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" id="addBtn" ng-click="newItem(date)" ng-if="dateList.length == 0"></div>
+    </div>
+</section>
+<!--新增弹框-->
+<div class="modal fade" id="addBox" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">菜单</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form">
+                    <div class="form-group">
+                        <label for="date">日期</label>{{date}}
+                        <input type="date" id="date" class="form-control" ng-model="date">
+                    </div>
+                    <div class="from-group">
+                        <label for="valueA">A餐</label>
+                        <input type="text" class="form-control" id="valueA" ng-model="valueA">
+                    </div>
+                    <div class="from-group">
+                        <label for="valueB">B餐</label>
+                        <input type="text" class="form-control" id="valueB" ng-model="valueB">
+                    </div>
+                    <div class="from-group">
+                        <label for="valueC">C餐</label>
+                        <input type="text" class="form-control" id="valueC" ng-model="valueC">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary form-control" ng-click="saveItem(date)">保存</button>
+                <!--<button class="btn btn-warning form-control disabled" ng-if="isPush == '1'">菜单已发布,不可修改</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改弹框-->
+<div class="modal fade" id="modBox" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">修改菜单</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form">
+                    <div class="form-group">
+                        <label for="modDate">日期</label>
+                        <input type="date" id="modDate" class="form-control" ng-model="modDate" readonly="readonly">
+                    </div>
+                    <div class="from-group">
+                        <label for="modValueA">A餐</label>
+                        <input type="text" class="form-control" id="modValueA" ng-model="modValueA">
+                    </div>
+                    <div class="from-group">
+                        <label for="modValueB">B餐</label>
+                        <input type="text" class="form-control" id="modValueB" ng-model="modValueB">
+                    </div>
+                    <div class="from-group">
+                        <label for="modValueC">C餐</label>
+                        <input type="text" class="form-control" id="modValueC" ng-model="modValueC">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary form-control" ng-click="updateItem(modDate)">修改</button>
+                <!--<button class="btn btn-warning form-control disabled" ng-if="isPush == '1'">菜单已发布,不可修改</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--确认删除提示框-->
+<div class="modal fade" id="deleteMsgBox">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">删除提示</h4>
+            </div>
+            <div class="modal-body">
+                <p>确定删除当日菜单?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" ng-click="deleteItem(deleteDate)">删除</button>
+                <button class="btn btn-default" ng-click="cancelDelete()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改提示框-->
+<div class="modal fade" id="modMsgBox">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">修改提示</h4>
+            </div>
+            <div class="modal-body">
+                <p>修改成功</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #addBtn {
+        height: 237px;
+        background: url("http://sanjin.ngrok.natapp.cn/frontend/resource/images/u8.png") no-repeat;
+        background-size: 60%;
+        background-position: center;
+        transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -webkit-transition: background-color 1s;
+        -o-transition: background-color 1s;
+    }
+    #addBtn:hover {
+        cursor: pointer;
+        background-color: rgba(208, 208, 208, 0.2);
+    }
+</style>

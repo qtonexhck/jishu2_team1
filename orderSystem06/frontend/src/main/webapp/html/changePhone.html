@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="css/changePhone.css" />
+
+<div class="outer">
+    <p>旧手机号：</p>
+    <input type="text" id="oldNumber" onpropertychange="checkNumber(this)" oninput="checkNumber(this)">
+    <p>新手机号：</p>
+    <input type="text" id="newNumber" onpropertychange="checkNumber(this)" oninput="checkNumber(this)">
+    <p>验证码：</p>
+    <input type="text" id="verificationCode" onpropertychange="checkCode(this)" oninput="checkCode(this)">
+    <button type="button" class="myButton">验证码</button>
+    <p class="tips">
+        <i class="tipsIcon icon"></i>
+        温馨提示：您正在修改手机号码，请确保您的新手机号码在动力加系统中已经更新，否则将验证失败。
+    </p>
+    <button class="sumbitButton singleButtonBorder"  onclick="changePhone()">确认修改</button>
+    <div id="successTips" class="hiddenTipsOuter">
+        <table class="hiddenTable">
+            <tr>
+                <td style="text-align: center">
+                    <div class="hiddenTipsContainer">
+                        <img src="resource/images/success.png" style="height: 8rem;width: 8rem;">
+                        <p style="font-size: 2rem;font-weight: bold;;color: white;">修改成功</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

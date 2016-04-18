@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="css/payStatus.css" />
+<div class="outer">
+    <div class="header borderBottom">
+        <p>{{ payStatus }}<i class="icon" id="statusIcon"></i></p>
+        <p>{{ today }}</p>
+    </div>
+    <div class="menu" id="menu">
+        <p class="item">{{ foodItem }}</p>
+        <p class="name">{{ place }}{{ foodName }}</p>
+    </div>
+    <button type="button" class="changeButton singleButtonBorder" ng-click="doSomethings()">{{ statusButton }}</button>
+</div>
+
+

@@ -1,0 +1,182 @@
+body{
+    position: fixed;
+    margin: 0;
+    padding: 1rem 1rem 0;
+    width: 100%;
+    height: 100%;
+    background: #f0f0f2;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.bigContainer{
+    height: 93%;
+}
+.bottomNav{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 7%;
+}
+.bottomNav table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #337ab7;
+    /*color: red;*/
+}
+.bottomNav table td:hover{
+    cursor: pointer;
+}
+.bottomNav table tr td a{
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(100,100,100,0);
+    z-index: 10;
+}
+a:link,
+a:visited,
+a:hover,
+a:active{
+    text-decoration: none;
+    color: #337ab7;
+}
+.outer{
+    position: relative;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    background: #d7d7d7;
+}
+/*小图标公用css*/
+.icon{
+    margin: 0;
+    padding: 0;
+    background-size: 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.icon:before{
+    content: '\3000';
+}
+/*添加下划线*/
+.borderBottom{
+    border-bottom-style: solid;
+    border-bottom-color: rgba(146,146,146,.5);
+    border-bottom-width: 1px;
+}
+/*为单个按钮添加左右线*/
+.singleButtonBorder{
+    outline: none;
+    background: none;
+    border: none;
+    border-right-style: solid;
+    border-right-color: rgba(146,146,146,.5);
+    border-right-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgba(146,146,146,.5);
+    border-left-width: 1px;
+}
+/*-----------start消息弹窗公用css----------*/
+.hiddenTipsOuter{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+.hiddenTable{
+    width: 100%;
+    height: 100%;
+}
+.hiddenTipsContainer{
+    padding: 1rem;
+    margin: 0 auto;
+    width: 80%;
+    background: rgba(165,165,165,.9);
+}
+/*-----------end消息弹窗公用css----------*/
+
+/*-----------start底部双按钮公用css----------*/
+.twoButtonInline{
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    padding: 1rem;
+}
+.leftButton,
+.rightButton{
+    display: inline-block;
+    text-align: center;
+    width: 49%;
+    font-size: 2rem;
+}
+.leftButton:hover,
+.rightButton:hover{
+    cursor: pointer;
+    background: rgba(186,186,186,.5);
+    color: white;
+}
+.leftButton{
+    margin-right: -2px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: rgba(159,159,159,.5);
+}
+.rightButton{
+    margin-left: -2px;
+}
+/*-----------end底部双按钮公用css----------*/
+/*按钮不能用状态*/
+.disabled{
+    color: #e7e7e7;
+}
+/*按钮可以用状态*/
+.enabled{
+    color: #bd680f;
+}
+/*放大底部当前的导航文字*/
+.selectedBackground{
+    color: black;
+}
+
+
+/*-----------测试用css----------*/
+.timeDiv{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 5rem;
+    font-size: 2rem;
+    background: rgba(144,144,144,.7);
+    z-index: 9999;
+}
+.timeDiv p{
+    text-align: center;
+    padding: .5rem 0;
+}
+.timeDiv p:hover{
+    cursor: pointer;
+    background: rgba(215,215,215,.7);
+}
+.timeSelected{
+    padding: 0;
+    margin: 0;
+
+}
+.timeSelection{
+    display: none;
+}

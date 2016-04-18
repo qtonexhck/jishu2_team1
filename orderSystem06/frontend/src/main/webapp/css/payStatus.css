@@ -1,0 +1,41 @@
+.header p{
+    margin: 0 1rem 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+.successIcon{
+    background-image: url("../resource/images/paysuccess.png");
+}
+.failIcon{
+    background-image: url("../resource/images/payfail.png");
+}
+.item{
+    padding: 1rem;
+    width: 100%;
+    height: 18rem;
+    line-height: 18rem;
+    font-size: 18rem;
+    font-weight: 800;
+    text-align: center;
+    color: #ff6600;
+}
+.name{
+    text-align: center;
+    font-size: 2rem;
+}
+.changeButton{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 30%;
+    width: 40%;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+.chineseTips{
+    padding:1rem 0;
+    font-size: 2rem;
+}
+.tipsIcon{
+    background-image: url("../resource/images/tips.png");
+}

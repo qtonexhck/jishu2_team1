@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <title>全通点餐系统</title>
+
+    <!--皮肤-->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+
+    <!--jquery-->
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+
+    <!-- angular主库 -->
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
+
+    <!--第三方angular类库-->
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+
+    <!--配置-->
+    <script type="text/javascript" src="js/services/app.js"></script>
+    <script type="text/javascript" src="js/services/router.js"></script>
+    <script type="text/javascript" src="js/services/constant.js"></script>
+
+    <!--公用js-->
+    <script type="text/javascript" src="js/controller/common.js"></script>
+
+    <!--控制器-->
+    <script type="text/javascript" src="js/controller/payStatus.ctrl.js"></script>
+    <script type="text/javascript" src="js/controller/user.ctrl.js"></script>
+    <script type="text/javascript" src="js/controller/changePhone.ctrl.js"></script>
+    <script type="text/javascript" src="js/controller/forFood.ctrl.js"></script>
+    <script type="text/javascript" src="js/controller/myFood.ctrl.js"></script>
+
+</head>
+<body ng-app="Lunchapp">
+    <div ng-view class="bigContainer" id="bigContainer"></div>
+    <div class="bottomNav">
+        <table>
+            <tr>
+                <td ng-class="nav=='canteen'?'enabled':'';">全通食堂<a href="#/forFood"></a></td>
+                <td ng-class="nav=='myLunch'?'enabled':'';">我的点餐<a href="#/myFood"></a></td>
+                <td ng-class="nav=='userCenter'?'enabled':'';">个人中心<a href="#/user"></a></td>
+            </tr>
+        </table>
+    </div>
+    <div id="timeDiv" class="timeDiv">
+        <p class="timeSelected" onclick="showTimeSelection()">time</p>
+        <div class="timeSelection" id="timeSelection" onclick="selectTime(event)">
+            <p>08:00</p>
+            <p>09:00</p>
+            <p>10:00</p>
+            <p>12:15</p>
+            <p>13:00</p>
+        </div>
+    </div>
+</body>
+</html>

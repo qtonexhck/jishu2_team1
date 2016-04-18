@@ -1,0 +1,18 @@
+.header p{
+    margin: 0 1rem 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+.item{
+    padding: 1rem;
+    text-align: center;
+    height: 20rem;
+    line-height: 20rem;
+    font-size: 20rem;
+    font-weight: 800;
+    color: #ff6600;
+}
+.name{
+    text-align: center;
+    font-size: 2rem;
+}

@@ -1,0 +1,46 @@
+<link rel="stylesheet" type="text/css" href="css/user.css" />
+<div class="outer">
+    <div class="header borderBottom">
+        <img class="userPic" src="resource/images/user_pic.jpg">
+        <p class="userName">斯蒂芬-库里</p>
+    </div>
+    <div class="userInfo borderBottom">
+        <p>电话号码：
+            <span class="telephone">16722223333</span>
+            <a  class="change" href="#/changePhone">
+                <i class="icon changeIcon"></i>&nbsp;修改
+            </a>
+        </p>
+        <p>就餐地址：
+            <span class="eatAddress">17楼</span>&nbsp;&nbsp;
+            <img src="resource/images/select.png" class="selectIcon" id="selectPic" ng-click="changeSelection()"></img>
+        </p>
+        <p>餐卡余额：
+            <span class="balance">1百万</span>
+            <a  class="pay" href="javasctript:">
+                <i class="payIcon icon"></i>&nbsp;充值
+            </a>
+        </p>
+        <div class="selectBox" id="selectBox" onclick="selectAddress(event)">
+            <p class="borderBottom">17楼</p>
+            <p class="borderBottom">18楼</p>
+            <p>创客食堂</p>
+        </div>
+    </div>
+    <p class="twoButtonInline">
+        <span class="leftButton">取消</span>
+        <span class="rightButton" onclick="changeData()">修改</span>
+    </p>
+    <div id="successTips" class="hiddenTipsOuter">
+        <table class="hiddenTable">
+            <tr>
+                <td style="text-align: center">
+                    <div class="hiddenTipsContainer">
+                        <img src="resource/images/success.png" style="height: 8rem;width: 8rem;">
+                        <p style="font-size: 2rem;font-weight: bold;;color: white;">修改成功</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

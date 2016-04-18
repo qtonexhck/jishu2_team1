@@ -1,0 +1,68 @@
+<link rel="stylesheet" type="text/css" href="css/forFood.css" />
+<div class="outer">
+    <div class="header borderBottom">
+        <p>今日点餐</p>
+        <p>{{ today }}</p>
+    </div>
+    <div class="foodBox">
+        <p class="text-center borderBottom" style="width: 80%;margin: 0 auto">
+            <span class="place" ng-click="selectPlace('5')">
+                <span class="selectPlace" ng-class="place=='5'?'checked':'';"></span>&nbsp;5楼
+            </span>
+            <span class="place" ng-click="selectPlace('17')">
+                <span class="selectPlace" ng-class="place=='17'?'checked':'';"></span>&nbsp;17楼
+            </span>
+            <span class="place" ng-click="selectPlace('18')">
+                <span class="selectPlace" ng-class="place=='18'?'checked':'';"></span>&nbsp;18楼
+            </span>
+        </p>
+        <p ng-click="selectThis('A')">
+            <i>A:</i>
+            <span class="foodName">{{ foodA }}</span>
+            <span class="selectFood" ng-class="check=='A'?'checked':'';"></span>
+        </p>
+        <p ng-click="selectThis('B')">
+            <i>B:</i>
+            <span class="foodName">{{ foodB }}</span>
+            <span class="selectFood" ng-class="check=='B'?'checked':'';"></span>
+        </p>
+        <p class="borderBottom" ng-click="selectThis('C')">
+            <i>C:</i>
+            <span class="foodName">{{ foodC }}</span>
+            <span class="selectFood" ng-class="check=='C'?'checked':'';"></span>
+        </p>
+    </div>
+    <p class="twoButtonInline">
+        <span class="leftButton" ng-click="cancel()">取消</span>
+        <span class="rightButton" ng-click="confirm()" id="payButton">确定</span>
+    </p>
+    <div id="payTips" class="hiddenTipsOuter">
+        <table class="hiddenTable">
+            <tr>
+                <td style="text-align: center">
+                    <div class="hiddenTipsContainer">
+                        <p>你的选择是：</p>
+                        <p class="mySelectionFood"><span id="mySelect">{{ selectionType }}</span>:{{ mySelectionName }}</p>
+                        <p>
+                            <span class="leftButton" ng-click="back()">返回</span>
+                            <span class="rightButton" ng-click="pay()">支付</span>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="warmTips" class="hiddenTipsOuter">
+        <table class="hiddenTable">
+            <tr>
+               <td style="text-align: center">
+                   <div class="hiddenTipsContainer">
+                       <h2>温馨提示</h2>
+                       <p>{{ warmTips }}
+                   </div>
+               </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.tl {
+    text-align: left;
+}
+.tr {
+    text-align: right;
+}
+.tc {
+    text-align: center;
+}
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+/*login*/
+.login-box {
+    width: 40%;
+    margin: 0 auto;
+    position: absolute;
+}
+/*.login-box .panel-body {*/
+    /*padding-top: 50px;*/
+    /*padding-bottom: 50px;*/
+/*}*/
